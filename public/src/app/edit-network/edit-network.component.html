@@ -1,0 +1,32 @@
+<p>
+    <a routerLink="/">Home</a>
+</p>
+<p *ngIf="errorMsg">{{ errorMsg }}</p>
+<form *ngIf="networkToEdit !== null" (submit)="handleSubmit()">
+  <div>
+    <label>Name </label>
+    <input type="text" name="name" [(ngModel)]="networkToEdit.name">
+  </div>
+  <div>
+    <label>Description </label>
+    <input type="text" name="description" [(ngModel)]="networkToEdit.description">
+  </div>
+  <div>
+    <label>Notes </label>
+    <input type="text" name="notes" [(ngModel)]="networkToEdit.notes">
+  </div>
+  <div>
+    <label>Status </label>
+    <input type="text" name="status" [(ngModel)]="networkToEdit.status">
+  </div>
+  <div>
+    <label>Links </label>
+    <input type="text" name="links" [(ngModel)]="networkToEdit.links">
+  </div>
+  <button type="button" (click)="handleCancel()">
+    Cancel
+  </button>
+  <button>
+    Submit
+  </button>
+</form>

@@ -1,0 +1,33 @@
+<p>
+    <a routerLink="/new">Add a Lead</a>
+</p>
+  <hr>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Notes</th>
+        <th>Status</th>
+        <th>Links</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let network of networks">
+        <td>{{ network.name }}</td>
+        <td>{{ network.description }}</td>
+        <td>{{ network.notes }}</td>
+        <td>{{ network.status }}</td>
+        <td>{{ network.links }}</td>
+        <td>
+          <button (click)="editNetwork(network._id)">
+            Edit
+          </button>
+          <button (click)="deleteNetwork(network._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

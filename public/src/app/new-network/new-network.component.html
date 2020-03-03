@@ -1,0 +1,37 @@
+<a routerLink="/">Home</a>
+
+<h3>Add a new connection:</h3>
+<div>
+  <p *ngFor="let error of errors" class="error">
+    {{ error }}
+  </p>
+</div>
+
+<form (submit)="handleSubmit()">
+  <div>
+    <label>Name </label>
+    <input type="text" name="name" [(ngModel)]="newNetwork.name">
+  </div>
+  <div>
+    <label>Description </label>
+    <input type="text" name="description" [(ngModel)]="newNetwork.description">
+  </div>
+  <div>
+    <label>Notes </label>
+    <input type="text" name="notes" [(ngModel)]="newNetwork.notes">
+  </div>
+  <div>
+    <label>Status </label>
+    <input type="text" name="status" [(ngModel)]="newNetwork.status">
+  </div>
+  <div>
+    <label>Links </label>
+    <input type="text" name="links" [(ngModel)]="newNetwork.links">
+  </div>
+  <button type="button" (click)="handleCancel()">
+    Cancel
+  </button>
+  <button>
+    Submit
+  </button>
+</form>
